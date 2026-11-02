@@ -1,14 +1,14 @@
-/*Problem 7:  This class will be graded manually by the TAs
+/*Problem 8:  This class will be graded manually by the TAs
 
 This class is the main driver of the game. It will interact with
 the game elements, actions and the web page to capture user input.
 
-7.1 Define a class named Controller. 
+8.1 Define a class named Controller. 
 
 It should have one member field:
 - member field to represent the game - GameF26 object
 
-7.2 Define a constructor with five parameters:
+8.2 Define a constructor with five parameters:
     - number of rows for the gameboard
     - number of columns for the gameboard
     - color of TeamA
@@ -18,15 +18,15 @@ The constructor will create an instance of a GameF26
 and assigns it to the game member field
     
 
-7.3 Acccessor method:
+8.3 Acccessor method:
     - getGame 
 
-7.4 An accessor method getTurn 
+8.4 An accessor method getTurn 
     has no parameters and returns a string indicating the Team whose turn it is.
     Format is not being tested but it should be similar to:
     "It is blue team's turn.
 
-7.5 A method carryOutAction that attempts to take the action selected by the user. 
+8.5 A method carryOutAction that attempts to take the action selected by the user. 
 It returns a boolean based on whether it successfully performed the action.
 This method has three parameters in this order:
         - an ActionType to represent the Action the player wants to make
@@ -54,6 +54,7 @@ to play your game with a text based interface.
 Play your game to check if it is behaving as described in class.
 
 */
+
 /*
 import { GameF26 } from "./elements/GameF26";
 import { Action } from "./actions/Action";
