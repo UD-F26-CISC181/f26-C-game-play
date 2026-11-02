@@ -46,6 +46,4 @@ import { BoardLocation } from "../elements/Utilities";
 import { Piece } from "../elements/Piece";
 import { ActionError } from "../../ActionError";
 import { Action } from "./Action";
-import { PieceEvilMinion } from "../elements/PieceEvilMinion";
-import { BoardSquare } from "../elements/BoardSquare";
 */
