@@ -1,4 +1,4 @@
-/* Problem  5 & 6
+/* Problem  5, 6 and 7
 
 We are going to add a PieceEvilMinion that will represent
 a purple minion character from the Despicable Me movie. 
@@ -75,7 +75,11 @@ NOTE: You can use a higher order method here if you read ahead to Chap 12!
 This method removes the piece from the army if it it in the army. The
 removed Piece should have it's soldier field set to false.
 
-Test your PieceEvilMinion with PieceEvilMinion.test.ts
+*********************************************************************** 
+Problem 7  Update the game to include a PieceEvilMinion for both Teams.
+
+7.1  In your Game class' private helper function that creates a Team,
+add code to create an instance of a PieceEvilMinion and add it to the team.
 
 *********************************************************************** 
 NOTE: For this assignment we will not be including the modifications that
@@ -86,7 +90,10 @@ your game without this complication before including it.
 We will add this part in next final project assignment (Part D). 
 For now Evil Minions will recruit, and be recruited and attacked like other Pieces.
 ***********************************************************************
+
+Test your PieceEvilMinion with PieceEvilMinion.test.ts
 */
+
 
 /*import { Backpack } from "./Backpack";
 import { PieceMinion } from "./PieceMinion";
