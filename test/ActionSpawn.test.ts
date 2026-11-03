@@ -1,9 +1,7 @@
 import { ActionError } from "../src/ActionError";
 import { Action } from "../src/game/actions/Action";
 import { ActionSpawn } from "../src/game/actions/ActionSpawn";
-import { Ability } from "../src/game/elements/Ability";
 import { BoardSquare } from "../src/game/elements/BoardSquare";
-import { GameF26 } from "../src/game/elements/GameF26";
 import { Piece } from "../src/game/elements/Piece";
 import { PieceMinion } from "../src/game/elements/PieceMinion";
 import { ActionType, BoardLocation } from "../src/game/elements/Utilities";
@@ -35,14 +33,14 @@ describe("Action Spawn", () => {
             new BoardLocation(0, 10),
             endSquare,
         );
-        expect(spawnMinionInvalid.validAction()).toEqual(false);
+        expect(spawnMinionInvalid.isValidAction()).toEqual(false);
         // out of bounds  [-3][0]
         spawnMinionInvalid = new ActionSpawn(
             testGame.game,
             new BoardLocation(-3, 0),
             endSquare,
         );
-        expect(spawnMinionInvalid.validAction()).toEqual(false);
+        expect(spawnMinionInvalid.isValidAction()).toEqual(false);
 
         // try invalid - no piece on the start square [2][3]
         spawnMinionInvalid = new ActionSpawn(
@@ -50,7 +48,7 @@ describe("Action Spawn", () => {
             new BoardLocation(2, 3),
             endSquare,
         );
-        expect(spawnMinionInvalid.validAction()).toEqual(false);
+        expect(spawnMinionInvalid.isValidAction()).toEqual(false);
 
         // try start square with opponents piece [3][3]
         spawnMinionInvalid = new ActionSpawn(
@@ -58,7 +56,7 @@ describe("Action Spawn", () => {
             new BoardLocation(3, 3),
             endSquare,
         );
-        expect(spawnMinionInvalid.validAction()).toEqual(false);
+        expect(spawnMinionInvalid.isValidAction()).toEqual(false);
 
         // try start square that can't take that action
         // Red H doesn't have a spawn in backpack
@@ -67,7 +65,7 @@ describe("Action Spawn", () => {
             new BoardLocation(0, 0),
             endSquare,
         );
-        expect(spawnMinionInvalid.validAction()).toEqual(false);
+        expect(spawnMinionInvalid.isValidAction()).toEqual(false);
 
         //TODO full board
     });
@@ -79,7 +77,7 @@ describe("Action Spawn", () => {
             new BoardLocation(2, 2),
             endSquare,
         );
-        expect(spawnMinionValid.validAction()).toEqual(true);
+        expect(spawnMinionValid.isValidAction()).toEqual(true);
 
         try {
             spawnMinionValid.performAction();
@@ -145,7 +143,8 @@ describe("Action Spawn", () => {
             console.log(testGame.game.getMessage());
         }
     });
-/*
+    /*
+
     test("(2 pts)  ActionSpawn - invalid due to full board", () => {
         let miniGame: GameF26 = new GameF26(2, 2, "Red", "Blue", 3);
         // iterate over the board and give them all the ability to spawn
@@ -178,8 +177,7 @@ describe("Action Spawn", () => {
         );
         expect(spawnInValid.isValidAction()).toEqual(false);
     });
-    */
-
+     */
     test("(2 pts)  ActionSpawn - performAction when invalid", () => {
         let spawnInValid: ActionSpawn = new ActionSpawn(
             testGame.game,
